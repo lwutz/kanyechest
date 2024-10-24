@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanye Chest</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #282c34;
+            margin: 0;
+            font-family: 'Russo One', sans-serif;
+        }
+
+        h1 {
+            color: #f39c12;
+            text-transform: uppercase;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .scene {
+            perspective: 1000px; 
+        }
+
+        .cube {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) rotateY(0deg);
+            transition: transform 1s;
+        }
+
+        .cube:hover {
+            transform: rotateX(-20deg) rotateY(30deg);
+        }
+
+        .cube img {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .front  { transform: translateZ(100px); }
+        .back   { transform: rotateY(180deg) translateZ(100px); }
+        .left   { transform: rotateY(-90deg) translateZ(100px); }
+        .right  { transform: rotateY(90deg) translateZ(100px); }
+        .top    { transform: rotateX(90deg) translateZ(100px); }
+        .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+    </style>
+</head>
+<body>
+
+    <h1>Kanye Chest</h1>
+    <div class="scene">
+        <div class="cube" onmouseover="document.getElementById('audio').play()">
+            <img src="kanye.jpg" class="front" alt="Front">
+            <img src="kanye.jpg" class="back" alt="Back">
+            <img src="kanye.jpg" class="left" alt="Left">
+            <img src="kanye.jpg" class="right" alt="Right">
+            <img src="kanye.jpg" class="top" alt="Top">
+            <img src="kanye.jpg" class="bottom" alt="Bottom">
+        </div>
+    </div>
+    <audio id="audio" src="song.mp3"></audio>
+
+</body>
+</html>
